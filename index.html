@@ -98,7 +98,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tianaitian.com/2018/05/31/flag/" data-id="cjhujqn3q0000ygu3ak28z2ku" class="article-share-link">Share</a>
+      <a data-url="http://tianaitian.com/2018/05/31/flag/" data-id="cjhujuiwv0000i4u3pacojam1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -122,7 +122,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/30/hexo的使用/">Hello World</a>
+      <a class="article-title" href="/2018/05/30/hexo的使用/">hexo的使用</a>
     </h1>
   
 
@@ -143,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tianaitian.com/2018/05/30/hexo的使用/" data-id="cjhujqn3v0001ygu30fwvzd6s" class="article-share-link">Share</a>
+      <a data-url="http://tianaitian.com/2018/05/30/hexo的使用/" data-id="cjhujuix30002i4u3hque0250" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,25 +177,16 @@
       
         <h2 id="1-安装node环境并配置"><a href="#1-安装node环境并配置" class="headerlink" title="1.安装node环境并配置"></a>1.安装node环境并配置</h2><p>More info: <a href="https://jingyan.baidu.com/article/c85b7a64b6498c003aac956a.html" target="_blank" rel="noopener">node</a></p>
 <h2 id="2-安装git环境并配置"><a href="#2-安装git环境并配置" class="headerlink" title="2.安装git环境并配置"></a>2.安装git环境并配置</h2><p>More info: <a href="https://jingyan.baidu.com/article/9f7e7ec0b17cac6f2815548d.html" target="_blank" rel="noopener">git</a></p>
-<h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h2><p>More info: <a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="noopener">Hexo</a><br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
-<h2 id="4-Hexo和git关联"><a href="#4-Hexo和git关联" class="headerlink" title="4.Hexo和git关联"></a>4.Hexo和git关联</h2><pre><code>4.1 github新建仓库 github用户名.github.io (因为要使用github的page服务，所以仓库名必须是这个格式)
-4.2 在建好的项目右侧有个settings按钮，点击它，向下拉到GitHub Pages，你会看到那边有个网址，访问它，你将会惊奇的发现该项目已经被部署到网络上，能够通过外网来访问它。 
-4.3 将ssh添加到github，输入ssh -T git@github.com，测试添加ssh是否成功。如果看到Hi后面是你的用户名，就说明成功了
-4.4 配置Deployment，在hexo项目中，找到_config.yml文件，修改repo值（在末尾）可以配置多个，一定要注意空格格式
+<h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h2><p>More info: <a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="noopener">Hexo</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-Hexo和git关联"><a href="#4-Hexo和git关联" class="headerlink" title="4.Hexo和git关联"></a>4.Hexo和git关联</h2><p>4.1 github新建仓库 github用户名.github.io (因为要使用github的page服务，所以仓库名必须是这个格式)<br>4.2 在建好的项目右侧有个settings按钮，点击它，向下拉到GitHub Pages，你会看到那边有个网址，访问它，你将会惊奇的发现该项目已经被部署到网络上，能够通过外网来访问它。<br>4.3 将ssh添加到github，输入ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>，测试添加ssh是否成功。如果看到Hi后面是你的用户名，就说明成功了<br>4.4 配置Deployment，在hexo项目中，找到_config.yml文件，修改repo值（在末尾）可以配置多个，一定要注意空格格式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repository: git@github.com:tiandashu/tiandashu.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+<p>4.5 在生成以及部署文章之前，需要安装一个扩展：npm install hexo-deployer-git –save<br>4.6 使用编辑器编好文章，那么就可以使用命令：hexo d -g，生成以及部署了<br>4.7 部署成功后访问你的地址：<a href="http://github用户名.github.io。那么将看到生成的文章" target="_blank" rel="noopener">http://github用户名.github.io。那么将看到生成的文章</a></p>
+<h2 id="5-指定域名"><a href="#5-指定域名" class="headerlink" title="5.指定域名"></a>5.指定域名</h2><p>5.1 在hexo项目的source文件夹下面新建 CNAME文件<br>5.2 在CNAME里写上域名 tianaitian.com<br>5.3 获取<a href="https://github用户名.github.io" target="_blank" rel="noopener">https://github用户名.github.io</a> 的ip地址：ping github用户名.github.io<br>5.4 使用域名解析，本人使用阿里的服务</p>
 
-4.5 在生成以及部署文章之前，需要安装一个扩展：npm install hexo-deployer-git --save
-4.6 使用编辑器编好文章，那么就可以使用命令：hexo d -g，生成以及部署了
-4.7 部署成功后访问你的地址：http://github用户名.github.io。那么将看到生成的文章
-</code></pre><h2 id="5-指定域名"><a href="#5-指定域名" class="headerlink" title="5.指定域名"></a>5.指定域名</h2><pre><code>5.1 在hexo项目的source文件夹下面新建 CNAME文件
-5.2 在CNAME里写上域名 tianaitian.com
-5.3 获取https://github用户名.github.io 的ip地址：ping github用户名.github.io
-5.4 使用域名解析，本人使用阿里的服务
-</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tianaitian.com/2018/05/30/hexo的搭建/" data-id="cjhujqn3z0002ygu3b6sf86g4" class="article-share-link">Share</a>
+      <a data-url="http://tianaitian.com/2018/05/30/hexo的搭建/" data-id="cjhujuiwz0001i4u3uvkzxmbx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -240,7 +231,7 @@
           </li>
         
           <li>
-            <a href="/2018/05/30/hexo的使用/">Hello World</a>
+            <a href="/2018/05/30/hexo的使用/">hexo的使用</a>
           </li>
         
           <li>
