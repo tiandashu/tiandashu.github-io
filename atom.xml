@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>田大叔的博客</title>
+  
+  <subtitle>个人简历</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://tiandashu.github.io/"/>
+  <updated>2018-05-31T12:19:28.676Z</updated>
+  <id>http://tiandashu.github.io/</id>
+  
+  <author>
+    <name>田大叔</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>flag</title>
+    <link href="http://tiandashu.github.io/2018/05/31/flag/"/>
+    <id>http://tiandashu.github.io/2018/05/31/flag/</id>
+    <published>2018-05-31T11:47:50.000Z</published>
+    <updated>2018-05-31T12:19:28.676Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="立个flag"><a href="#立个flag" class="headerlink" title="立个flag"></a>立个flag</h3><p>由于本人水平较菜，并缺乏一定的毅力。特立个flag：</p><p>1.每天坚持看一篇技术文章<br>2.每天保持高效<br>3.每天坚持锻炼</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;立个flag&quot;&gt;&lt;a href=&quot;#立个flag&quot; class=&quot;headerlink&quot; title=&quot;立个flag&quot;&gt;&lt;/a&gt;立个flag&lt;/h3&gt;&lt;p&gt;由于本人水平较菜，并缺乏一定的毅力。特立个flag：&lt;/p&gt;
+&lt;p&gt;1.每天坚持看一篇技术文章&lt;br&gt;2.每
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hexo的使用</title>
+    <link href="http://tiandashu.github.io/2018/05/30/hexo%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://tiandashu.github.io/2018/05/30/hexo的使用/</id>
+    <published>2018-05-30T14:16:53.175Z</published>
+    <updated>2018-05-31T13:02:02.375Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hexo的搭建</title>
+    <link href="http://tiandashu.github.io/2018/05/30/hexo%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
+    <id>http://tiandashu.github.io/2018/05/30/hexo的搭建/</id>
+    <published>2018-05-30T14:16:53.000Z</published>
+    <updated>2018-05-31T13:02:02.375Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-安装node环境并配置"><a href="#1-安装node环境并配置" class="headerlink" title="1.安装node环境并配置"></a>1.安装node环境并配置</h2><p>More info: <a href="https://jingyan.baidu.com/article/c85b7a64b6498c003aac956a.html" target="_blank" rel="noopener">node</a></p><h2 id="2-安装git环境并配置"><a href="#2-安装git环境并配置" class="headerlink" title="2.安装git环境并配置"></a>2.安装git环境并配置</h2><p>More info: <a href="https://jingyan.baidu.com/article/9f7e7ec0b17cac6f2815548d.html" target="_blank" rel="noopener">git</a></p><h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h2><p>More info: <a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="noopener">Hexo</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p><h2 id="4-Hexo和git关联"><a href="#4-Hexo和git关联" class="headerlink" title="4.Hexo和git关联"></a>4.Hexo和git关联</h2><p>4.1 github新建仓库 github用户名.github.io (因为要使用github的page服务，所以仓库名必须是这个格式)<br>4.2 在建好的项目右侧有个settings按钮，点击它，向下拉到GitHub Pages，你会看到那边有个网址，访问它，你将会惊奇的发现该项目已经被部署到网络上，能够通过外网来访问它。<br>4.3 将ssh添加到github，输入ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>，测试添加ssh是否成功。如果看到Hi后面是你的用户名，就说明成功了<br>4.4 配置Deployment，在hexo项目中，找到_config.yml文件，修改repo值（在末尾）可以配置多个，一定要注意空格格式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repository: git@github.com:tiandashu/tiandashu.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure><p>4.5 在生成以及部署文章之前，需要安装一个扩展：npm install hexo-deployer-git –save<br>4.6 使用编辑器编好文章，那么就可以使用命令：hexo d -g，生成以及部署了<br>4.7 部署成功后访问你的地址：<a href="http://github用户名.github.io。那么将看到生成的文章" target="_blank" rel="noopener">http://github用户名.github.io。那么将看到生成的文章</a></p><h2 id="5-指定域名"><a href="#5-指定域名" class="headerlink" title="5.指定域名"></a>5.指定域名</h2><p>5.1 在hexo项目的source文件夹下面新建 CNAME文件<br>5.2 在CNAME里写上域名 tianaitian.com<br>5.3 获取<a href="https://github用户名.github.io" target="_blank" rel="noopener">https://github用户名.github.io</a> 的ip地址：ping github用户名.github.io<br>5.4 使用域名解析，本人使用阿里的服务</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-安装node环境并配置&quot;&gt;&lt;a href=&quot;#1-安装node环境并配置&quot; class=&quot;headerlink&quot; title=&quot;1.安装node环境并配置&quot;&gt;&lt;/a&gt;1.安装node环境并配置&lt;/h2&gt;&lt;p&gt;More info: &lt;a href=&quot;https:
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
