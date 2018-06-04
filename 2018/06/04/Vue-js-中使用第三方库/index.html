@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="田大叔的博客">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="田大叔">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="田大叔的博客"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="田大叔的博客" />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="田大叔的博客"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="website" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+  <!-- Title -->
+  
+  <title>田大叔的博客</title>
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+    <!--font-awesome-->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="http://oct3pmpde.bkt.clouddn.com/timg.jpg" alt="田大叔的博客" height="60">
+        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+            <span>田大叔的博客</span>
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首页
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                归档
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                关于
+              </a>
+            </li>
+          
+            <li>
+              <a href="/project">
+                
+                  <i class="fa fa-folder-open "></i>
+                
+                项目
+              </a>
+            </li>
+          
+            <li>
+              <a href="/photo">
+                
+                  <i class="fa fa-photo "></i>
+                
+                相册
+              </a>
+            </li>
+          
+            <li>
+              <a href="/guestbook">
+                
+                  <i class="fa fa-edit "></i>
+                
+                留言
+              </a>
+            </li>
+          
+            <li>
+              <a href="/atom.xml">
+                
+                  <i class="fa fa-send "></i>
+                
+                RSS
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            Untitled
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2018-06-04
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>本文将介绍一些在 Vue.js 中使用第三方库的方式.</p>
+<h2 id="一、全局变量"><a href="#一、全局变量" class="headerlink" title="一、全局变量"></a>一、全局变量</h2><p>在项目中添加第三方库的最简单方式是讲其作为一个全局变量, 挂载到<code>window</code>对象上:</p>
+<p><em>entry.js</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window._ = require(&apos;lodash&apos;);</span><br></pre></td></tr></table></figure>
+<p><em>MyComponent.vue</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  created() &#123;</span><br><span class="line">    console.log(_.isEmpty() ? &apos;Lodash everywhere!&apos; : &apos;Uh oh..&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种方式不适合于服务端渲染, 因为服务端没有<code>window</code>对象, 是<code>undefined</code>, 当试图去访问属性时会报错.</p>
+<h2 id="二、在每个文件中引入"><a href="#二、在每个文件中引入" class="headerlink" title="二、在每个文件中引入"></a>二、在每个文件中引入</h2><p>另一个简单的方式是在每一个需要该库的文件中导入:</p>
+<p><em>MyComponent.vue</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import _ from &apos;lodash&apos;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  created() &#123;</span><br><span class="line">    console.log(_.isEmpty() ? &apos;Lodash is available here!&apos; : &apos;Uh oh..&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种方式是允许的, 但是比较繁琐, 并且带来的问题是: 你必须记住在哪些文件引用了该库, 如果项目不再依赖这个库时, 得去找到每一个引用该库的文件并删除该库的引用. 如果构建工具没设置正确, 可能导致该库的多份拷贝被引用.</p>
+<h2 id="三、优雅的方式"><a href="#三、优雅的方式" class="headerlink" title="三、优雅的方式"></a>三、优雅的方式</h2><p>在 Vuejs 项目中使用 JavaScript 库的一个优雅方式是讲其代理到 Vue 的原型对象上去. 按照这种方式, 我们引入<code>Moment</code>库:</p>
+<p><em>entry.js</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import moment from &apos;moment&apos;;</span><br><span class="line">Object.defineProperty(Vue.prototype, &apos;$moment&apos;, &#123; value: moment &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>由于所有的组件都会从 Vue 的原型对象上继承它们的方法, 因此在所有组件/实例中都可以通过<code>this.$moment:</code>的方式访问<code>Moment</code>而不需要定义全局变量或者手动的引入.</p>
+<p><em>MyNewComponent.vue</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  created() &#123;</span><br><span class="line">    console.log(&apos;The time is &apos; . this.$moment().format(&quot;HH:mm&quot;));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接下来就了解下这种方式的工作原理.</p>
+<h3 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty"></a>Object.defineProperty</h3><p>一般而言, 可以按照下面的方式来给对象设置属性:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.prototype.$moment = moment;</span><br></pre></td></tr></table></figure>
+<p>可以这样做, 但是<code>Object.defineProperty</code>允许我们通过一个<a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="noopener">descriptor</a><br>来定义属性. Descriptor 运行我们去设置对象属性的一些底层(low-level)细节, 如是否允许属性可写? 是否允许属性在<code>for</code>循环中被遍历.<br>通常, 我们不会为此感到困扰, 因为大部分时候, 对于属性赋值, 我们不需要考虑这样的细节. 但这有一个明显的优点:<br><strong>通过 descriptor 创建的属性默认是只读的</strong>.<br>这就意味着, 一些处于迷糊状态的(coffee-deprived)开发者不能在组件内去做一些很愚蠢的事情, 就像这样:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this.$http = &apos;Assign some random thing to the instance method&apos;;</span><br><span class="line">this.$http.get(&apos;/&apos;); // TypeError: this.$http.get is not a function</span><br></pre></td></tr></table></figure>
+<p>此外, 试图给只读实例的方法重新赋值会得到<code>TypeError: Cannot assign to read only property</code>的错误.</p>
+<h3 id=""><a href="#" class="headerlink" title="$"></a>$</h3><p>你可能会注意到, 代理第三库的属性会有一个<code>$</code>前缀, 也可能看到其它类似<code>$refs, $on, $mount</code>的属性和方式, 它们也有这个前缀.<br>这个不是强制要求, 给属性添加<code>$</code>前缀是提供那些处于迷糊状态(coffee-deprived)的开发者这是一个公开的 API, 和 Vuejs 的一些内部属性和方法区分开来.</p>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p>你还可能注意到, 在组件内是通过<code>this.libraryName</code>的方式来使用第三方库的, 当你知道它是一个实例方法时就不会感到意外了. 但与全局变量不同, 通过<code>this</code>来使用第三方库时, 必须确保<code>this</code>处于正确的作用域. 在回调方法中<code>this</code>的作用域会有不同, 但箭头式回调风格能保证<code>this</code>的作用域是正确的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.$http.get(&apos;/&apos;).then(res =&gt; &#123;</span><br><span class="line">  if (res.status !== 200) &#123;</span><br><span class="line">    this.$http.get(&apos;/&apos;) // etc</span><br><span class="line">    // Only works in a fat arrow callback.</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>如果你想在多个项目中使用同一个库, 或者想将其分享给其他人, 可以将其写成一个插件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import MyLibraryPlugin from &apos;my-library-plugin&apos;;</span><br><span class="line">Vue.use(MyLibraryPlugin);</span><br></pre></td></tr></table></figure></p>
+<p>在应用的入口引入插件之后, 就可以在任何一个组件内像使用<code>Vue Router</code>,<code>Vuex</code>一样使用你定义的库了.</p>
+<h3 id="写一个插件"><a href="#写一个插件" class="headerlink" title="写一个插件"></a>写一个插件</h3><p>首先, 创建一个文件用于编写自己的插件. 在示例中, 我会将<code>Axios</code>作为插件添加到项目中, 因而我给文件起名为<em>axios.js</em>. 其次, 插件要对外暴露一个<code>install</code>方法, 该方法的第一个参数是<code>Vue</code>的构造函数:</p>
+<p><em>axios.js</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  install: function(Vue) &#123;</span><br><span class="line">    // Do stuff</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以使用先前将库添加到原型对象上的方法:</p>
+<p><em>axios.js</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import axios from &apos;axios&apos;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  install: function(Vue,) &#123;</span><br><span class="line">    Object.defineProperty(Vue.prototype, &apos;$http&apos;, &#123; value: axios &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后, 利用<code>Vue</code>的实例方法<code>use</code>将插件添加到项目中:</p>
+<p><em>entry.js</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import AxiosPlugin from &apos;./axios.js&apos;;</span><br><span class="line">Vue.use(AxiosPlugin);</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  created() &#123;</span><br><span class="line">    console.log(this.$http ? &apos;Axios works!&apos; : &apos;Uh oh..&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="彩蛋-插件的可选参数"><a href="#彩蛋-插件的可选参数" class="headerlink" title="彩蛋: 插件的可选参数"></a>彩蛋: 插件的可选参数</h3><p>插件的<code>install</code>方法可以接受可选参数. 一些开发可能不喜欢将<code>Axios</code>实例命名为<code>$http</code>, 因为这是 Vue Resource 提供的一个通用名字. 因而可以提供一个可选的参数允许他们随意命名:</p>
+<p><em>axions.js</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import axios from &apos;axios&apos;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  install: function(Vue, name = &apos;$http&apos;) &#123;</span><br><span class="line">    Object.defineProperty(Vue.prototype, name, &#123; value: axios &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><em>entry.js</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import AxiosPlugin from &apos;./axios.js&apos;;</span><br><span class="line">Vue.use(AxiosPlugin, &apos;$axios&apos;);</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  created() &#123;</span><br><span class="line">    console.log(this.$axios ? &apos;Axios works!&apos; : &apos;Uh oh..&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>转载自<a href="https://github.com/dwqs/blog/issues/51，仅供本人自学留存，如有特殊需要请联系作者本人" target="_blank" rel="noopener">https://github.com/dwqs/blog/issues/51，仅供本人自学留存，如有特殊需要请联系作者本人</a></p>
+</blockquote>
+
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+           
+              <li class="next">
+              <a href="/2018/06/04/vue-notice/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+    <!-- 来比力评论框 start -->
+        <section class="livere" id="comments">
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzAxMS8xMzU0Nw==">
+    <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+    
+           if (typeof LivereTower === 'function') { return; }
+    
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+    
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+</section>
+    <!-- 来比力评论框 end -->
+  
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>田大叔的博客 &copy; 2018</span>
+    
+      <span class="split">|</span>
+      <span>田大叔</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+</body>
+
+</html>

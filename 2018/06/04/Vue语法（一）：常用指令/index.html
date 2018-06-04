@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="田大叔的博客">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="田大叔">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="田大叔的博客"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="田大叔的博客" />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="田大叔的博客"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="website" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+  <!-- Title -->
+  
+  <title>田大叔的博客</title>
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+    <!--font-awesome-->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="http://oct3pmpde.bkt.clouddn.com/timg.jpg" alt="田大叔的博客" height="60">
+        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+            <span>田大叔的博客</span>
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首页
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                归档
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                关于
+              </a>
+            </li>
+          
+            <li>
+              <a href="/project">
+                
+                  <i class="fa fa-folder-open "></i>
+                
+                项目
+              </a>
+            </li>
+          
+            <li>
+              <a href="/photo">
+                
+                  <i class="fa fa-photo "></i>
+                
+                相册
+              </a>
+            </li>
+          
+            <li>
+              <a href="/guestbook">
+                
+                  <i class="fa fa-edit "></i>
+                
+                留言
+              </a>
+            </li>
+          
+            <li>
+              <a href="/atom.xml">
+                
+                  <i class="fa fa-send "></i>
+                
+                RSS
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            Untitled
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2018-06-04
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ul>
+<li>解释：指令 (Directives) 是带有 <code>v-</code>前缀的特殊属性</li>
+<li>作用：当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM</li>
+</ul>
+<h4 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h4><ul>
+<li>v-text</li>
+<li>v-html</li>
+<li>v-bind</li>
+</ul>
+<h4 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h4><ul>
+<li>解释：更新元素的 textContent</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 v-text=&quot;msg&quot;&gt;&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h4><ul>
+<li>解释：更新元素的 innerHTML</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 v-html=&quot;msg&quot;&gt;&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h4><ul>
+<li>作用：当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM</li>
+<li>语法：<code>v-bind:title=&quot;msg&quot;</code></li>
+<li>简写：<code>:title=&quot;msg&quot;</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 完整语法 --&gt;</span><br><span class="line">&lt;a v-bind:href=&quot;url&quot;&gt;&lt;/a&gt;</span><br><span class="line">&lt;!-- 缩写 --&gt;</span><br><span class="line">&lt;a :href=&quot;url&quot;&gt;&lt;/a&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    // 2 创建 Vue 的实例对象</span><br><span class="line">    var vm = new Vue(&#123;</span><br><span class="line">      // el 用来指定vue挂载到页面中的元素，值是：选择器</span><br><span class="line">      // 理解：用来指定vue管理的HTML区域</span><br><span class="line">      el: &apos;#app&apos;,</span><br><span class="line">      // 数据对象，用来给视图中提供数据的</span><br><span class="line">      data: &#123;</span><br><span class="line">        url: &apos;http://www.baidu.com&apos;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h4><ul>
+<li>作用：绑定事件</li>
+<li>语法：<code>v-on:click=&quot;say&quot;</code> or <code>v-on:click=&quot;say(&#39;参数&#39;, $event)&quot;</code></li>
+<li>简写：<code>@click=&quot;say&quot;</code></li>
+<li>说明：绑定的事件从<code>methods</code>中获取</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 完整语法 --&gt;</span><br><span class="line">&lt;a v-on:click=&quot;doSomething&quot;&gt;&lt;/a&gt;</span><br><span class="line">&lt;!-- 缩写 --&gt;</span><br><span class="line">&lt;a @click=&quot;doSomething&quot;&gt;&lt;/a&gt;</span><br><span class="line">&lt;!-- 方法传参 --&gt;</span><br><span class="line">&lt;a @click=&quot;doSomething（“123”）&quot;&gt;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line"> &lt;script&gt;</span><br><span class="line">    // 2 创建 Vue 的实例对象</span><br><span class="line">    var vm = new Vue(&#123;</span><br><span class="line">      el: &apos;#app&apos;,</span><br><span class="line">      // methods属性用来给vue实例提供方法（事件）</span><br><span class="line">      methods: &#123;</span><br><span class="line">        doSomething: function(str) &#123;</span><br><span class="line">          //接受参数，并输出</span><br><span class="line">          console.log(str);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h4><ul>
+<li><code>.stop</code>阻止冒泡，调用 event.stopPropagation()</li>
+<li><code>.prevent</code> 阻止默认事件，调用 event.preventDefault()</li>
+<li><code>.capture</code>添加事件侦听器时使用事件<code>捕获</code>模式</li>
+<li><code>.self</code>只当事件在该元素本身（比如不是子元素）触发时触发回调</li>
+<li><code>.once</code> 事件只触发一次</li>
+</ul>
+<h4 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h4><ul>
+<li>作用：在表单元素上创建双向数据绑定</li>
+<li>说明：监听用户的输入事件以更新数据</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-model=&quot;message&quot; placeholder=&quot;edit me&quot;&gt;</span><br><span class="line">&lt;p&gt;Message is: &#123;&#123; message &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h4><ul>
+<li>作用：基于源数据多次渲染元素或模板块</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 1 基础用法 --&gt;</span><br><span class="line">&lt;div v-for=&quot;item in items&quot;&gt;</span><br><span class="line">  &#123;&#123; item.text &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- item 为当前项，index 为索引 --&gt;</span><br><span class="line">&lt;p v-for=&quot;(item, index) in list&quot;&gt;&#123;&#123;item&#125;&#125; -- &#123;&#123;index&#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;!-- item 为值，key 为键，index 为索引 --&gt;</span><br><span class="line">&lt;p v-for=&quot;(item, key, index) in obj&quot;&gt;&#123;&#123;item&#125;&#125; -- &#123;&#123;key&#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;p v-for=&quot;item in 10&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="key属性"><a href="#key属性" class="headerlink" title="key属性"></a>key属性</h4><ul>
+<li>推荐：使用 <code>v-for</code> 的时候提供<code>key</code>属性，以获得性能提升。</li>
+<li>说明：使用 key，VUE会基于 key 的变化重新排列元素顺序，并且会移除 key 不存在的元素。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-for=&quot;item in items&quot; :key=&quot;item.id&quot;&gt;</span><br><span class="line">  &lt;!-- 内容 --&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="样式处理-class和style"><a href="#样式处理-class和style" class="headerlink" title="样式处理 -class和style"></a>样式处理 -class和style</h3><ul>
+<li>说明：这两个都是HTML元素的属性，使用<code>v-bind</code>，只需要通过表达式计算出字符串结果即可</li>
+<li>表达式的类型：字符串、数组、对象</li>
+<li>语法：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 1 --&gt;</span><br><span class="line">&lt;div v-bind:class=&quot;&#123; active: true &#125;&quot;&gt;&lt;/div&gt; ===&gt;</span><br><span class="line">&lt;div class=&quot;active&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 2 --&gt;</span><br><span class="line">&lt;div :class=&quot;[&apos;active&apos;, &apos;text-danger&apos;]&quot;&gt;&lt;/div&gt; ===&gt;</span><br><span class="line">&lt;div class=&quot;active text-danger&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 3 --&gt;</span><br><span class="line">&lt;div v-bind:class=&quot;[&#123; active: true &#125;, errorClass]&quot;&gt;&lt;/div&gt; ===&gt;</span><br><span class="line">&lt;div class=&quot;active text-danger&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">--- style ---</span><br><span class="line">&lt;!-- 1 --&gt;</span><br><span class="line">&lt;div v-bind:style=&quot;&#123; color: activeColor, fontSize: fontSize + &apos;px&apos; &#125;&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;!-- 2 将多个 样式对象 应用到一个元素上--&gt;</span><br><span class="line">&lt;div v-bind:style=&quot;[baseStyles, overridingStyles]&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="v-if-和-v-show"><a href="#v-if-和-v-show" class="headerlink" title="v-if 和 v-show"></a>v-if 和 v-show</h4><ul>
+<li><a href="https://link.juejin.im/?target=https%3A%2F%2Fcn.vuejs.org%2Fv2%2Fguide%2Fconditional.html" target="_blank" rel="noopener">条件渲染</a></li>
+<li><code>v-if</code>：根据表达式的值的真假条件，销毁或重建元素</li>
+<li><code>v-show</code>：根据表达式之真假值，切换元素的 display CSS 属性</li>
+</ul>
+<h4 id="提升用户体验：v-cloak"><a href="#提升用户体验：v-cloak" class="headerlink" title="提升用户体验：v-cloak"></a>提升用户体验：v-cloak</h4><ul>
+<li>这个指令保持在元素上直到关联实例结束编译。和 CSS 规则如 [v-cloak] { display: none } 一起用时，这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕。</li>
+<li>防止刷新页面，网速慢的情况下出现等数据格式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-cloak&gt;</span><br><span class="line">  &#123;&#123; message &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="提升性能：v-pre"><a href="#提升性能：v-pre" class="headerlink" title="提升性能：v-pre"></a>提升性能：v-pre</h4><ul>
+<li>说明：跳过这个元素和它的子元素的编译过程。可以用来显示原始 Mustache 标签。跳过大量没有指令的节点会加快编译。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-pre&gt;&#123;&#123; this will not be compiled &#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="提升性能：v-once"><a href="#提升性能：v-once" class="headerlink" title="提升性能：v-once"></a>提升性能：v-once</h4><ul>
+<li>说明：只渲染元素和组件一次。随后的重新渲染，元素/组件及其所有的子节点将被视为静态内容并跳过。这可以用于优化更新性能。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-once&gt;This will never change: &#123;&#123;msg&#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2018/06/04/vue-notice/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2018/06/04/vue-favicon设置/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+    <!-- 来比力评论框 start -->
+        <section class="livere" id="comments">
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzAxMS8xMzU0Nw==">
+    <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+    
+           if (typeof LivereTower === 'function') { return; }
+    
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+    
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+</section>
+    <!-- 来比力评论框 end -->
+  
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>田大叔的博客 &copy; 2018</span>
+    
+      <span class="split">|</span>
+      <span>田大叔</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+</body>
+
+</html>

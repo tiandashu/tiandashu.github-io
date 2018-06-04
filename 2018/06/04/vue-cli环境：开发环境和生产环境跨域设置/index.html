@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="hexo的使用"/>
+      <meta property="og:title" content="田大叔的博客"/>
   
   <!--Open Graph Description-->
   
@@ -28,7 +28,7 @@
   <meta property="og:site_name" content="田大叔的博客"/>
   <!--Type page-->
   
-      <meta property="og:type" content="article" />
+      <meta property="og:type" content="website" />
   
   <!--Page Cover-->
   
@@ -46,7 +46,7 @@
     </script>
   <!-- Title -->
   
-  <title>hexo的使用 - 田大叔的博客</title>
+  <title>田大叔的博客</title>
 
 
   <link rel="shortcut icon" href="/favicon.ico">
@@ -164,25 +164,19 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            hexo的使用
+            Untitled
             
           </h1>
          
         </div>
          <p class="a-posted-on">
-          2018-05-30
+          2018-06-04
           </p>
         <!-- Post Main Content -->
         <div class="entry-content">
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+          <h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>在开发环境中配置代理来解决跨域<br>1、在config – index.js 中配置<br><img src="http://upload-images.jianshu.io/upload_images/2598877-5e7673a09b5fa977.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM图片20171108142449.png"><br>2、使用axios请求配置<img src="http://upload-images.jianshu.io/upload_images/2598877-846933ef0e5f28f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM图片20171108143050.png"><br>3、使用直接通过配置好的axios请求接口地址就好<br><img src="http://upload-images.jianshu.io/upload_images/2598877-3dc1cb7cdfa7858e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM图片20171108171216.png"></p>
+<h2 id="生产环境"><a href="#生产环境" class="headerlink" title="生产环境"></a>生产环境</h2><p>在生产环境跨域请求需要在服务端配合设置，解决No ‘Access-Control-Allow-Origin’的问题<br><a href="http://www.cnblogs.com/hcy1994/p/6241395.html" target="_blank" rel="noopener">http://www.cnblogs.com/hcy1994/p/6241395.html</a><br>看了tomcat的配置文档，弄了一个，问题就解决了。</p>
+<p>打开tomcat安装目录 -&gt; 打开 conf 目录 -&gt; 打开web.xml文件<br>将如下代码复制到web.xml文件中(我是放在 460左右的位置，不要放在最前面和最后面，一定要放中间)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">&lt;filter-name&gt;CorsFilter&lt;/filter-name&gt;</span><br><span class="line">&lt;filter-class&gt;org.apache.catalina.filters.CorsFilter&lt;/filter-class&gt;</span><br><span class="line">&lt;init-param&gt;</span><br><span class="line">&lt;param-name&gt;cors.allowed.origins&lt;/param-name&gt;</span><br><span class="line">&lt;param-value&gt;*&lt;/param-value&gt;</span><br><span class="line">&lt;/init-param&gt;</span><br><span class="line">&lt;init-param&gt;</span><br><span class="line">&lt;param-name&gt;cors.allowed.methods&lt;/param-name&gt;</span><br><span class="line">&lt;param-value&gt;GET,POST,HEAD,OPTIONS,PUT&lt;/param-value&gt;</span><br><span class="line">&lt;/init-param&gt;</span><br><span class="line">&lt;init-param&gt;</span><br><span class="line">&lt;param-name&gt;cors.allowed.headers&lt;/param-name&gt;</span><br><span class="line">&lt;param-value&gt;*&lt;/param-value&gt;</span><br><span class="line">&lt;/init-param&gt;</span><br><span class="line">&lt;init-param&gt;</span><br><span class="line">&lt;param-name&gt;cors.exposed.headers&lt;/param-name&gt;</span><br><span class="line">&lt;param-value&gt;Access-Control-Allow-Origin,Access-Control-Allow-Credentials&lt;/param-value&gt;</span><br><span class="line">&lt;/init-param&gt;</span><br><span class="line">&lt;init-param&gt;</span><br><span class="line">&lt;param-name&gt;cors.support.credentials&lt;/param-name&gt;</span><br><span class="line">&lt;param-value&gt;true&lt;/param-value&gt;</span><br><span class="line">&lt;/init-param&gt;</span><br><span class="line"></span><br><span class="line">&lt;/filter&gt;</span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line">&lt;filter-name&gt;CorsFilter&lt;/filter-name&gt;</span><br><span class="line">&lt;url-pattern&gt;/*&lt;/url-pattern&gt;</span><br><span class="line">&lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure></p>
 
         </div>
       </article>
@@ -193,12 +187,12 @@
            <ul class="pager">
     	     
       	     <li class="previous">
-              <a href="/2018/05/31/flag/" rel="prev">下一篇</a>
+              <a href="/2018/06/04/vue-devtools配置/" rel="prev">下一篇</a>
              </li>
            
            
               <li class="next">
-              <a href="/2018/05/30/hexo的搭建/" rel="prev">上一篇</a>
+              <a href="/2018/06/04/Vue语法（一）：全局配置/" rel="prev">上一篇</a>
             </li>
            
           </ul>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="田大叔的博客">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="田大叔">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="田大叔的博客"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="田大叔的博客" />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="田大叔的博客"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="website" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+  <!-- Title -->
+  
+  <title>田大叔的博客</title>
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+    <!--font-awesome-->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="http://oct3pmpde.bkt.clouddn.com/timg.jpg" alt="田大叔的博客" height="60">
+        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+            <span>田大叔的博客</span>
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首页
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                归档
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                关于
+              </a>
+            </li>
+          
+            <li>
+              <a href="/project">
+                
+                  <i class="fa fa-folder-open "></i>
+                
+                项目
+              </a>
+            </li>
+          
+            <li>
+              <a href="/photo">
+                
+                  <i class="fa fa-photo "></i>
+                
+                相册
+              </a>
+            </li>
+          
+            <li>
+              <a href="/guestbook">
+                
+                  <i class="fa fa-edit "></i>
+                
+                留言
+              </a>
+            </li>
+          
+            <li>
+              <a href="/atom.xml">
+                
+                  <i class="fa fa-send "></i>
+                
+                RSS
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            Untitled
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2018-06-04
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>转自：<a href="https://juejin.im/entry/59e8b8a8518825579d131e51" target="_blank" rel="noopener">https://juejin.im/entry/59e8b8a8518825579d131e51</a></p>
+<h3 id="1、v-model-用在-input-元素上"><a href="#1、v-model-用在-input-元素上" class="headerlink" title="1、v-model 用在 input 元素上"></a>1、v-model 用在 input 元素上</h3><p>v-model在使用的时候很像双向绑定的（实际上也是。。。），但是 Vue 是单项数据流，v-model 只是语法糖而已：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-model=&quot;something&quot; /&gt;</span><br><span class="line">&lt;input v-bind:value=&quot;something&quot; v-on:input=&quot;something = $event.target.value&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>第一行的代码其实只是第二行的语法糖。然后第二行代码还能简写成这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input :value=&quot;something&quot; @input=&quot;something = $event.target.value&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>要理解这行代码，首先你要知道 input 元素本身有个 oninput 事件，这是 HTML5 新增加的，类似 onchange ，每当输入框内容发生变化，就会触发 oninput ，通过 $event 把最新的 value 传递给 something。</p>
+<blockquote>
+<p>我们仔细观察语法糖和原始语法那两行代码，可以得出一个结论： 在给 input 元素添加 v-model 属性时，默认会把 value 作为元素的属性，然后把 ‘input’ 事件作为实时传递 value 的触发事件</p>
+</blockquote>
+<h3 id="2、v-model-用在组件上"><a href="#2、v-model-用在组件上" class="headerlink" title="2、v-model 用在组件上"></a>2、v-model 用在组件上</h3><p>v-model 不仅仅能在 input 上用，在组件上也能使用，拿官网上的demo看。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;currency-input v-model=&quot;price&quot;&gt;&lt;/currency-input&gt;</span><br><span class="line">Vue.component(&apos;currency-input&apos;, &#123;</span><br><span class="line">  template: &apos;\</span><br><span class="line">    &lt;span&gt;\</span><br><span class="line">      $\</span><br><span class="line">      &lt;input\</span><br><span class="line">        ref=&quot;input&quot;\</span><br><span class="line">        v-bind:value=&quot;value&quot;\</span><br><span class="line">        v-on:input=&quot;updateValue($event.target.value)&quot;\</span><br><span class="line">      &gt;\</span><br><span class="line">    &lt;/span&gt;\ &apos;,</span><br><span class="line">  props: [&apos;value&apos;], // 为什么这里要用 value 属性，value在哪里定义的？</span><br><span class="line">  methods: &#123;</span><br><span class="line">    // 不是直接更新值，而是使用此方法来对输入值进行格式化和位数限制</span><br><span class="line">    updateValue: function (value) &#123;</span><br><span class="line">      var formattedValue = value</span><br><span class="line">        // 删除两侧的空格符</span><br><span class="line">        .trim()</span><br><span class="line">        // 保留 2 位小数</span><br><span class="line">        .slice(</span><br><span class="line">          0,</span><br><span class="line">          value.indexOf(&apos;.&apos;) === -1</span><br><span class="line">            ? value.length</span><br><span class="line">            : value.indexOf(&apos;.&apos;) + 3</span><br><span class="line">        )</span><br><span class="line">      // 如果值尚不合规，则手动覆盖为合规的值</span><br><span class="line">      if (formattedValue !== value) &#123;</span><br><span class="line">        this.$refs.input.value = formattedValue</span><br><span class="line">      &#125;</span><br><span class="line">      // 通过 input 事件带出数值</span><br><span class="line">      // &lt;!--为什么这里把 &apos;input&apos; 作为触发事件的事件名？`input` 在哪定义的？--&gt;</span><br><span class="line">      this.$emit(&apos;input&apos;, Number(formattedValue))</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>如果你知道这两个问题的答案，那么恭喜你真正掌握了 v-model，如果你没明白，那么可以看下这段代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;currency-input v-model=&quot;price&quot;&gt;&lt;/currency-input&gt;</span><br><span class="line">所以在组件中使用时，它相当于下面的简写：</span><br><span class="line">//上行代码是下行的语法糖</span><br><span class="line">&lt;currency-input :value=&quot;price&quot; @input=&quot;price = arguments[0]&quot;&gt;&lt;/currency-input&gt;</span><br></pre></td></tr></table></figure></p>
+<p>所以，给组件添加 v-model 属性时，默认会把 value 作为组件的属性，然后把 ‘input’ 值作为给组件绑定事件时的事件名。这在写组件时特别有用。</p>
+<h3 id="3、v-model-的缺点和解决办法"><a href="#3、v-model-的缺点和解决办法" class="headerlink" title="3、v-model 的缺点和解决办法"></a>3、v-model 的缺点和解决办法</h3><p>在创建类似复选框或者单选框的常见组件时，v-model就不好用了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;checkbox&quot; v-model=&quot;something&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>v-model 给我们提供好了 value 属性和 oninput 事件，但是，我们需要的不是 value 属性，而是 checked 属性，并且当你点击这个单选框的时候不会触发 oninput 事件，它只会触发 onchange 事件。</p>
+<blockquote>
+<p>因为 v-model 只是用到了 input 元素上，所以这种情况好解决：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;checkbox&quot; :checked=&quot;value&quot; @change=&quot;change(value, $event)&quot;</span><br></pre></td></tr></table></figure>
+<p>当 v-model 用到组件上时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;checkbox v-model=&quot;value&quot;&gt;&lt;/checkbox&gt;</span><br><span class="line">Vue.component(&apos;checkbox&apos;, &#123;</span><br><span class="line">  tempalte: &apos;&lt;input type=&quot;checkbox&quot; @change=&quot;change&quot; :checked=&quot;currentValue&quot;/&gt;&apos;</span><br><span class="line">  props: [&apos;value&apos;],</span><br><span class="line">  data: function () &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            //这里为什么要定义一个局部变量，并用 prop 的值初始化它。</span><br><span class="line">            currentValue: this.value</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    change: function ($event) &#123;</span><br><span class="line">      this.currentValue = $event.target.checked;</span><br><span class="line">      this.$emit(&apos;input&apos;, this.currentValue);  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>在 Vue 2.2 版本，你可以在定义组件时通过 model 选项的方式来定制 prop/event 。</p>
+<h3 id="4、vue-组件数据流"><a href="#4、vue-组件数据流" class="headerlink" title="4、vue 组件数据流"></a>4、vue 组件数据流</h3><p>从上面 v-model 的分析我们可以这么理解，双向数据绑定就是在单向绑定的基础上给可输入元素（input、textare等）添加了 change(input) 事件，来动态修改 model 和 view ，即通过触发（$emit）父组件的事件来修改mv来达到 mvvm 的效果。而 vue 组件间传递数据是单向的，即数据总是由父组件传递到子组件，子组件在其内部可以有自己维护的数据，但它无权修改父组件传递给它的数据，当开发者尝试这样做的时候，vue 将会报错。这样做是为了组件间更好的解耦，在开发中可能有多个子组件依赖于父组件的某个数据，假如子组件可以修改父组件数据的话，一个子组件变化会引发所有依赖这个数据的子组件发生变化，所以 vue 不推荐子组件修改父组件的数据，直接修改 props 会抛出警告。流程图如下：<br><a href="https://link.juejin.im/?target=https%3A%2F%2Fcamo.githubusercontent.com%2F37b4f4f5fe2864eacc4836fd593e62c6fd1b6c06%2F68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031372f31302f31392f3262303830386237393234663730663732316662396435636132323962356533" target="_blank" rel="noopener"><img src="http://upload-images.jianshu.io/upload_images/2598877-0c00bfbd113ad780?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></a><br>所以，当你想要在子组件去修改 props 时，把这个子组件当成父组件那样用，所以就有了</p>
+<ul>
+<li>1、定义一个局部变量，并用 prop 的值初始化它。</li>
+<li>2、定义一个计算属性，处理 prop 的值并返回。</li>
+</ul>
+
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2018/06/04/Vue语法（一）：全局配置/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2018/06/04/项目总结/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+    <!-- 来比力评论框 start -->
+        <section class="livere" id="comments">
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzAxMS8xMzU0Nw==">
+    <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+    
+           if (typeof LivereTower === 'function') { return; }
+    
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+    
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+</section>
+    <!-- 来比力评论框 end -->
+  
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>田大叔的博客 &copy; 2018</span>
+    
+      <span class="split">|</span>
+      <span>田大叔</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+</body>
+
+</html>
