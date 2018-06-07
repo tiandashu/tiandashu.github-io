@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="flag"/>
+      <meta property="og:title" content="Vue项目部署资源路径问题"/>
   
   <!--Open Graph Description-->
   
@@ -46,7 +46,7 @@
     </script>
   <!-- Title -->
   
-  <title>flag - 田大叔的博客</title>
+  <title>Vue项目部署资源路径问题 - 田大叔的博客</title>
 
 
   <link rel="shortcut icon" href="/favicon.ico">
@@ -164,18 +164,22 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            flag
+            Vue项目部署资源路径问题
             
           </h1>
          
         </div>
          <p class="a-posted-on">
-          2018-05-31
+          2018-06-07
           </p>
         <!-- Post Main Content -->
         <div class="entry-content">
-          <h3 id="还有理想吗"><a href="#还有理想吗" class="headerlink" title="还有理想吗"></a>还有理想吗</h3><p>理想是什么？<br>有人说把小时候吹过的牛都实现了那就是理想；也有人说理想仅仅是都美好生活憧憬。</p>
-<p>每天坚持一点点很小的事情，每天都变得比昨天优秀。在经历挫折和磨难后仍然愿意相信自己，把曾经以为很遥远的事情做的优秀。<br>1.每天坚持看一篇技术文章<br>2.每天保持高效<br>3.每天坚持锻炼</p>
+          <h3 id="本文主要解决两个问题："><a href="#本文主要解决两个问题：" class="headerlink" title="本文主要解决两个问题："></a>本文主要解决两个问题：</h3><p>1、vue-cli发布时 js，css文件路径错误<br>2、vue-cli发布时js、css文件正常，但是图片路径错误</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题:"></a>问题:</h3><p>vue-cli 脚手架生成的默认打包配置文件情况下运行 npm run build 打包后，即可开始项目部署</p>
+<p>项目部署根据公司要求不同大致分为一下俩种部署方式：</p>
+<h3 id="1、服务器放置打包后生成的dist文件夹"><a href="#1、服务器放置打包后生成的dist文件夹" class="headerlink" title="1、服务器放置打包后生成的dist文件夹"></a>1、服务器放置打包后生成的dist文件夹</h3><p>此种部署方式，需要将config.js文件下index.js中的assersPublishPath，改为‘./’，</p>
+<h3 id="2、项目部署后发现图片路径不对，在浏览器器中仔细分析加载的图片路径"><a href="#2、项目部署后发现图片路径不对，在浏览器器中仔细分析加载的图片路径" class="headerlink" title="2、项目部署后发现图片路径不对，在浏览器器中仔细分析加载的图片路径"></a>2、项目部署后发现图片路径不对，在浏览器器中仔细分析加载的图片路径</h3><p>分析：<br>正常路径应为<a href="http://localhost:3333/resume/dist/static/img/music2.3278dbf.png" target="_blank" rel="noopener">http://localhost:3333/resume/dist/static/img/music2.3278dbf.png</a><br>但是引用路径<a href="http://localhost:3333/resume/dist/static/css/static/img/music2.3278dbf.png，" target="_blank" rel="noopener">http://localhost:3333/resume/dist/static/css/static/img/music2.3278dbf.png，</a></p>
+<p>对比一下发现多了两层，/static/css, 看来跟css 有一定关系~，这时候我们去看看css里面的引入路径<br>原来是css中的引入为static/img/***.jpg，但是css文件相对于index的相对路径为 /static/css,<br>解决办法：在build下utils.js中新增一下黑框括起来的代码即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if (options.extract) &#123;</span><br><span class="line">    return ExtractTextPlugin.extract(&#123;</span><br><span class="line">    use: loaders,</span><br><span class="line">    fallback: &apos;vue-style-loader&apos;,</span><br><span class="line">    //线上环境打包资源问题</span><br><span class="line">    publicPath: &apos;../../&apos;  //（解释：pubicpath为打包后app.css至index.html的相对路径）</span><br><span class="line">    &#125;)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    return [&apos;vue-style-loader&apos;].concat(loaders)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
         </div>
       </article>
@@ -185,13 +189,9 @@
 	<div class="container" >
            <ul class="pager">
     	     
-      	     <li class="previous">
-              <a href="/2018/06/03/博客添加评论功能/" rel="prev">下一篇</a>
-             </li>
-           
            
               <li class="next">
-              <a href="/2018/05/30/hexo的搭建并部署到gitpages/" rel="prev">上一篇</a>
+              <a href="/2018/06/07/Vue项目SSR改造实战/" rel="prev">上一篇</a>
             </li>
            
           </ul>
