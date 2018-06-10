@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Vue项目部署资源路径问题"/>
+      <meta property="og:title" content="Vue项目本地资源路径问题"/>
   
   <!--Open Graph Description-->
   
@@ -46,7 +46,7 @@
     </script>
   <!-- Title -->
   
-  <title>Vue项目部署资源路径问题 - 田大叔的博客</title>
+  <title>Vue项目本地资源路径问题 - 田大叔的博客</title>
 
 
   <link rel="shortcut icon" href="/favicon.ico">
@@ -164,23 +164,21 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            Vue项目部署资源路径问题
+            Vue项目本地资源路径问题
             
           </h1>
          
         </div>
          <p class="a-posted-on">
-          2018-06-07
+          2018-06-10
           </p>
         <!-- Post Main Content -->
         <div class="entry-content">
-          <h3 id="本文主要解决两个问题："><a href="#本文主要解决两个问题：" class="headerlink" title="本文主要解决两个问题："></a>本文主要解决两个问题：</h3><p>1、vue-cli发布时 js，css文件路径错误<br>2、vue-cli发布时js、css文件正常，但是图片路径错误</p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题:"></a>问题:</h3><p>vue-cli 脚手架生成的默认打包配置文件情况下运行 npm run build 打包后，即可开始项目部署</p>
-<p>项目部署根据公司要求不同大致分为一下俩种部署方式：</p>
-<h3 id="1、服务器放置打包后生成的dist文件夹"><a href="#1、服务器放置打包后生成的dist文件夹" class="headerlink" title="1、服务器放置打包后生成的dist文件夹"></a>1、服务器放置打包后生成的dist文件夹</h3><p>此种部署方式，需要将config.js文件下index.js中的assersPublishPath，改为‘./’，</p>
-<h3 id="2、项目部署后发现图片路径不对，在浏览器器中仔细分析加载的图片路径"><a href="#2、项目部署后发现图片路径不对，在浏览器器中仔细分析加载的图片路径" class="headerlink" title="2、项目部署后发现图片路径不对，在浏览器器中仔细分析加载的图片路径"></a>2、项目部署后发现图片路径不对，在浏览器器中仔细分析加载的图片路径</h3><p>分析：<br>正常路径应为<a href="http://localhost:3333/resume/dist/static/img/music2.3278dbf.png" target="_blank" rel="noopener">http://localhost:3333/resume/dist/static/img/music2.3278dbf.png</a><br>但是引用路径<a href="http://localhost:3333/resume/dist/static/css/static/img/music2.3278dbf.png，" target="_blank" rel="noopener">http://localhost:3333/resume/dist/static/css/static/img/music2.3278dbf.png，</a></p>
-<p>对比一下发现多了两层，/static/css, 看来跟css 有一定关系~，这时候我们去看看css里面的引入路径<br>原来是css中的引入为static/img/***.jpg，但是css文件相对于index的相对路径为 /static/css,<br>解决办法：在build下utils.js中新增一下黑框括起来的代码即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if (options.extract) &#123;</span><br><span class="line">    return ExtractTextPlugin.extract(&#123;</span><br><span class="line">    use: loaders,</span><br><span class="line">    fallback: &apos;vue-style-loader&apos;,</span><br><span class="line">    //线上环境打包资源问题</span><br><span class="line">    publicPath: &apos;../../&apos;  //（解释：pubicpath为打包后app.css至index.html的相对路径）</span><br><span class="line">    &#125;)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    return [&apos;vue-style-loader&apos;].concat(loaders)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+          <p>使用vue-cli进行开发了一段时间，但是难免还是遇到一些问题，这其中也包括了对webpack的不求甚解(下个目标搞定webpack)。此文章先对遇到的Vue项目本地资源路径问题做一个简单的记录。</p>
+<h3 id="1-直接引入图片"><a href="#1-直接引入图片" class="headerlink" title="1.直接引入图片"></a>1.直接引入图片</h3><p>无论图片是放在static文件夹、assets文件夹或者是自己在src下新建的文件夹，图片路径和背景图路径均使用相对路径。<br>另外简单说下static和assets的区别：两者都是存放项目的静态文件资源js/css/img…。static文件加下的资源项目打包的时候不会被webpack处理只是简单的拷贝，所以一般将第三方的资源放在这里比如swiper,加快打包的速度。assets文件下的资源会被webpack进行处理比如压缩混淆添加hash等，所以一般将项目本身的资源放在该文件下。</p>
+<h3 id="2-动态绑定一组本地图片"><a href="#2-动态绑定一组本地图片" class="headerlink" title="2.动态绑定一组本地图片"></a>2.动态绑定一组本地图片</h3><p>将图片当成模块先引进来，再绑定<br><img src="/images/vue1.png" alt=""><br><img src="/images/vue2.png" alt=""><br>虽然这种方式可以实现，但是写起来麻烦，比较懒。</p>
+<h3 id="3-给资源路径设置alias"><a href="#3-给资源路径设置alias" class="headerlink" title="3.给资源路径设置alias"></a>3.给资源路径设置alias</h3><p>在引入资源时使用，别名alias，vue init webpack生成的项目在build/webpack.base.conf.js文件中进行更改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">resolve: &#123;</span><br><span class="line">    extensions: [&apos;.js&apos;, &apos;.vue&apos;, &apos;.json&apos;],</span><br><span class="line">    alias: &#123;</span><br><span class="line">      &apos;vue$&apos;: &apos;vue/dist/vue.esm.js&apos;,</span><br><span class="line">      &apos;@&apos;: resolve(&apos;src&apos;),</span><br><span class="line">      &apos;@a&apos;: resolve(&apos;src/assets&apos;),</span><br><span class="line">      &apos;@c&apos;: resolve(&apos;src/components&apos;),</span><br><span class="line">      &apos;@p&apos;: resolve(&apos;src/page&apos;),</span><br><span class="line">      &apos;@s&apos;: resolve(&apos;src/service&apos;),</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">之后项目中就可以使用了 </span><br><span class="line">&lt;img src=&quot;~@a/images/[图片名]&quot;&gt; // images: src/assets 下存放图片的文件夹 </span><br><span class="line">backgroud: url(~@a/images/[图片名]) </span><br><span class="line">js中 直接用 @a/...，不需要加 ~</span><br></pre></td></tr></table></figure>
         </div>
       </article>
     </div>
@@ -189,13 +187,9 @@
 	<div class="container" >
            <ul class="pager">
     	     
-      	     <li class="previous">
-              <a href="/2018/06/07/Vue项目SSR改造实战/" rel="prev">下一篇</a>
-             </li>
-           
            
               <li class="next">
-              <a href="/2018/06/03/博客添加评论功能/" rel="prev">上一篇</a>
+              <a href="/2018/06/10/Vue项目中使用cdn引入js/" rel="prev">上一篇</a>
             </li>
            
           </ul>
