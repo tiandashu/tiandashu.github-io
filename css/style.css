@@ -618,6 +618,11 @@ Content
   position: relative;
   margin: 20px 0; }
 
+@media all and (min-width: 720px) {
+  .article {
+    float: left;
+    margin: 20px; } }
+
 .container {
   max-width: 850px;
   margin: 0 auto; }
@@ -1232,3 +1237,14 @@ pre {
   .footer-widgets .inside-wrapper {
     padding-left: 5px;
     padding-right: 5px; } }
+
+.clearfix::after {
+  content: '';
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }

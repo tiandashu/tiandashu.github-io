@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tiandashu.github.io/"/>
-  <updated>2018-06-10T15:56:14.283Z</updated>
+  <updated>2018-06-11T12:43:33.019Z</updated>
   <id>http://tiandashu.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue项目引入远程js</title>
+    <link href="http://tiandashu.github.io/2018/06/11/Vue%E9%A1%B9%E7%9B%AE%E5%BC%95%E5%85%A5%E8%BF%9C%E7%A8%8Bjs/"/>
+    <id>http://tiandashu.github.io/2018/06/11/Vue项目引入远程js/</id>
+    <published>2018-06-11T12:35:54.000Z</published>
+    <updated>2018-06-11T12:43:33.019Z</updated>
+    
+    <content type="html"><![CDATA[<p>###　1.直接在dom上操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line"> mounted() &#123;</span><br><span class="line">  const s = document.createElement(&apos;script&apos;);</span><br><span class="line">  s.type = &apos;text/javascript&apos;;</span><br><span class="line">  s.src = &apos;https://g.alicdn.com/dingding/dinglogin/0.0.2/ddLogin.js&apos;;</span><br><span class="line">  document.body.appendChild(s);</span><br><span class="line"> &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="2-封装一个组件-remote-js"><a href="#2-封装一个组件-remote-js" class="headerlink" title="2.封装一个组件 remote-js"></a>2.封装一个组件 remote-js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//remote-js</span><br><span class="line">export default &#123;</span><br><span class="line">    components: &#123;</span><br><span class="line">        &apos;remote-js&apos;: &#123;</span><br><span class="line">            render(createElement) &#123;</span><br><span class="line">                return createElement(&apos;script&apos;, &#123; attrs: &#123; type: &apos;text/javascript&apos;, src: this.src &#125;&#125;);</span><br><span class="line">            &#125;,</span><br><span class="line">            props: &#123;</span><br><span class="line">                src: &#123; type: String, required: true &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//在别的组件中使用</span><br><span class="line">import remoteJs from &apos;path/to/remote-js&apos;;</span><br><span class="line">export default &#123;</span><br><span class="line">    mixins:[remoteJs]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;remote-js src=&quot;https://g.alicdn.com/dingding/dinglogin/0.0.2/ddLogin.js&quot;&gt;&lt;/remote-js&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;###　1.直接在dom上操作&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2
+      
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="http://tiandashu.github.io/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>koa2入门资源</title>
@@ -61,20 +84,6 @@
   </entry>
   
   <entry>
-    <title>Vue项目中使用cdn引入js</title>
-    <link href="http://tiandashu.github.io/2018/06/10/Vue%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8cdn%E5%BC%95%E5%85%A5js/"/>
-    <id>http://tiandashu.github.io/2018/06/10/Vue项目中使用cdn引入js/</id>
-    <published>2018-06-10T14:21:50.000Z</published>
-    <updated>2018-06-10T15:41:50.023Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Vue项目本地资源路径问题</title>
     <link href="http://tiandashu.github.io/2018/06/10/Vue%E9%A1%B9%E7%9B%AE%E6%9C%AC%E5%9C%B0%E8%B5%84%E6%BA%90%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/"/>
     <id>http://tiandashu.github.io/2018/06/10/Vue项目本地资源路径问题/</id>
@@ -90,6 +99,20 @@
         &lt;p&gt;使用vue-cli进行开发了一段时间，但是难免还是遇到一些问题，这其中也包括了对webpack的不求甚解(下个目标搞定webpack)。此文章先对遇到的Vue项目本地资源路径问题做一个简单的记录。&lt;/p&gt;
 &lt;h3 id=&quot;1-直接引入图片&quot;&gt;&lt;a href=&quot;#1-直接引入
       
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Vue项目中使用cdn引入js</title>
+    <link href="http://tiandashu.github.io/2018/06/10/Vue%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8cdn%E5%BC%95%E5%85%A5js/"/>
+    <id>http://tiandashu.github.io/2018/06/10/Vue项目中使用cdn引入js/</id>
+    <published>2018-06-10T14:21:50.000Z</published>
+    <updated>2018-06-10T15:41:50.023Z</updated>
+    
+    <summary type="html">
     
     </summary>
     
