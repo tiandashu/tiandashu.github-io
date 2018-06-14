@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="田大叔的博客">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="田大叔">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="word-break、word-wrap和white-space的区别"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="田大叔的博客" />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="田大叔的博客"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+  <!-- Title -->
+  
+  <title>word-break、word-wrap和white-space的区别 - 田大叔的博客</title>
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+    <!--font-awesome-->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="http://oct3pmpde.bkt.clouddn.com/timg.jpg" alt="田大叔的博客" height="60">
+        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+            <span>田大叔的博客</span>
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首页
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                归档
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                关于
+              </a>
+            </li>
+          
+            <li>
+              <a href="/project">
+                
+                  <i class="fa fa-folder-open "></i>
+                
+                项目
+              </a>
+            </li>
+          
+            <li>
+              <a href="/photo">
+                
+                  <i class="fa fa-photo "></i>
+                
+                相册
+              </a>
+            </li>
+          
+            <li>
+              <a href="/guestbook">
+                
+                  <i class="fa fa-edit "></i>
+                
+                留言
+              </a>
+            </li>
+          
+            <li>
+              <a href="/atom.xml">
+                
+                  <i class="fa fa-send "></i>
+                
+                RSS
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            word-break、word-wrap和white-space的区别
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2018-06-14
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <h3 id="一、基本介绍"><a href="#一、基本介绍" class="headerlink" title="一、基本介绍"></a>一、基本介绍</h3><p>1、word-break<br>值：normal | break-all | keep-all | break-word</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">normal：  </span><br><span class="line">使用默认的断行规则。  </span><br><span class="line">break-all：  </span><br><span class="line">对于non-CJK (CJK 指中文/日文/韩文) 文本，可在任意字符间断行。  </span><br><span class="line">keep-all：  </span><br><span class="line">CJK 文本不断行。 Non-CJK 文本表现同 normal。  </span><br><span class="line">兼容性如下图所示：keep-all的兼容性比较差一些，其他基本上主流的浏览器都能支持。</span><br></pre></td></tr></table></figure>
+<p><img src="/images/css1.jpg" alt=""></p>
+<p>2、word-wrap<br>注：word-wrap 属性原本属于微软的一个私有属性，在 CSS3 现在的文本规范草案中已经被重名为 overflow-wrap 。 word-wrap 现在被当作 overflow-wrap 的 “别名”。 稳定的谷歌 Chrome 和 Opera 浏览器版本支持这种新语法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">word-wrap语法如下：</span><br><span class="line">值：normal | break-word  </span><br><span class="line">normal：  </span><br><span class="line">表示在正常的单词结束处换行。  </span><br><span class="line">break-word：  </span><br><span class="line">表示如果行内没有多余的地方容纳该单词到结尾，则那些正常的不能被被分割的单词会被强制分割换行。</span><br></pre></td></tr></table></figure>
+<p>3、white-space<br>值：normal | pre | nowrap | pre-wrap | pre-line</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">normal：  </span><br><span class="line">连续的空白符会被合并，换行符会被当作空白符来处理。填充line盒子时，必要的话会换行。  </span><br><span class="line">nowrap：  </span><br><span class="line">和 normal 一样，连续的空白符会被合并。但换行符无效。  </span><br><span class="line">pre：  </span><br><span class="line">所有空白符都会被保留。不会自动换行，原样输出。   </span><br><span class="line">pre-wrap：  </span><br><span class="line">保留空白符序列，但是正常地进行换行。  </span><br><span class="line">pre-line：  </span><br><span class="line">合并空白符序列，但是保留换行符。  </span><br><span class="line">上面的换行符是指回车\r、\n、或\r\n。对于&lt;br/&gt;标签，不管是上面哪个属性都会换行的。</span><br><span class="line">如果同时有多个空格、制表符、换行符，最终合并结果是只有一个空格。</span><br></pre></td></tr></table></figure>
+<p>pre和pre-wrap的区别在于pre-wrap能够自动换行；pre-wrap和pre-line的区别在于pre-line能够合并空格。<br>(帮助记忆：wrap在排版中一般指换行)</p>
+<p>规则        空格和制表符    换行符        自动换行<br>normal        合并        合并        换行<br>nowrap        合并        合并       不换行<br>pre    保留    保留        不换行<br>pre-wrap    保留        保留        换行<br>pre-line    合并        保留        换行</p>
+<p>二、word-break:break-all和word-wrap:nowrap区别</p>
+<p>前者是暴力强制换行，不管行末的单词是否显示完整，只要是非中日韩字符，就强制换行；<br>后者是温柔处理，如果行末没有足够空间可以放下单词，整个单词放到下一行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;   </span><br><span class="line">p &#123;  </span><br><span class="line">    width: 200px;  </span><br><span class="line">    padding: 5px;  </span><br><span class="line">    background-color: #f0f3f9;  </span><br><span class="line">    font-size: 14px;  </span><br><span class="line">&#125;  </span><br><span class="line">.word-break &#123;  </span><br><span class="line">    word-break: break-all;  </span><br><span class="line">&#125;  </span><br><span class="line">.word-wrap &#123;  </span><br><span class="line">&lt;span style=&quot;white-space:pre;&quot;&gt; &lt;/span&gt;white-space: break-word;  </span><br><span class="line">&#125;  </span><br><span class="line">&lt;/style&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;p class=&quot;word-break&quot;&gt;这个段落设置了word-break:break-all。&lt;/p&gt;  </span><br><span class="line">&lt;p class=&quot;word-wrap&quot;&gt;这个段落设置了white-space:break-word。&lt;/p&gt;  </span><br><span class="line">效果如下图所示：</span><br></pre></td></tr></table></figure>
+<p>三、word-break:keep-all和white-space:nowrap<br>这两个差别比较大，作用完全不一样。<br>word-break:keep-all会自动换行，但自动换行不会在词间换行，包括非日韩文以及日韩文。对于非日韩文来说，效果和word-break:normal是一样的。<br>white-space:nowrap效果是不会自动换行，除非手动添加换行标签。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;   </span><br><span class="line">p &#123;  </span><br><span class="line">    width: 200px;  </span><br><span class="line">    padding: 5px;  </span><br><span class="line">    background-color: #f0f3f9;  </span><br><span class="line">    font-size: 14px;  </span><br><span class="line">&#125;  </span><br><span class="line">.word-break &#123;  </span><br><span class="line">    word-break: normal;  </span><br><span class="line">&#125;  </span><br><span class="line">.word-keep &#123;  </span><br><span class="line">    word-break: keep-all;  </span><br><span class="line">&#125;  </span><br><span class="line">.nowrap &#123;  </span><br><span class="line">    white-space: nowrap;  </span><br><span class="line">&#125;  </span><br><span class="line">&lt;/style&gt;  </span><br><span class="line">&lt;p class=&quot;word-break&quot;&gt;这个段落设置了word-break:normal。非中日韩文词间不会断行但日韩文词间换行。&lt;/p&gt;  </span><br><span class="line">&lt;p class=&quot;word-keep&quot;&gt;这个段落设置了word-break:keep-all。非中日韩文以及中日韩文的词间都不换行。&lt;/p&gt;  </span><br><span class="line">&lt;p class=&quot;nowrap&quot;&gt;这个段落设置了white-space:nowrap。不管文字有多长都不会换行，除非添加换行标签&lt;br/&gt;。&lt;br/&gt;前面有个换行标签&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+           
+              <li class="next">
+              <a href="/2018/06/11/Vue项目引入远程js/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+    <!-- 来比力评论框 start -->
+        <section class="livere" id="comments">
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzAxMS8xMzU0Nw==">
+    <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+    
+           if (typeof LivereTower === 'function') { return; }
+    
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+    
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+</section>
+    <!-- 来比力评论框 end -->
+  
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>田大叔的博客 &copy; 2018</span>
+    
+      <span class="split">|</span>
+      <span>田大叔</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+</body>
+
+</html>
