@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="田大叔的博客"/>
+      <meta property="og:title" content="video标签视频比例拉伸"/>
   
   <!--Open Graph Description-->
   
@@ -28,7 +28,7 @@
   <meta property="og:site_name" content="田大叔的博客"/>
   <!--Type page-->
   
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content="article" />
   
   <!--Page Cover-->
   
@@ -46,7 +46,7 @@
     </script>
   <!-- Title -->
   
-  <title>Archives - 田大叔的博客</title>
+  <title>video标签视频比例拉伸 - 田大叔的博客</title>
 
 
   <link rel="shortcut icon" href="/favicon.ico">
@@ -156,155 +156,80 @@
 
 
   <!-- Main Content -->
-  
-
-<!-- Main Content -->
-<div class="archive content-area">
-  <div class="container">
-    <h1 class="entry-title">Archives</h1>
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy
-          1. group site.posts by year
-          2. sort posts-in-one-year by Month and Day
-        -->
-        
-
-        
-          <h2 class="year">2018</h2>
-          <ul class="list">
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            video标签视频比例拉伸
             
-  <li>
-    <span class="date">
-      2018-07-01
-    </span>
-    <a href="/2018/07/01/video标签视频比例拉伸/" class="title">
-      video标签视频比例拉伸
-    </a>
-  </li>
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2018-07-01
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>需求：视频比例拉伸</p>
+<p>方案一：object-fit<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">video &#123;</span><br><span class="line">    object-fit:fill;</span><br><span class="line">    width:800px;</span><br><span class="line">    height:320px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>但是这个属性的兼容性不是很好….<br>！<a href="/images/video1.png">兼容性表</a></p>
+<p>方案二：保持宽度不变，调整rotateX即可实现高度变小，也就是宽高比变大了。<br>！<a href="/images/video2.png">兼容性表</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//举个例子，假如原始视频分辨率是640*320（16:9），我想把它调成4:3，也就是480*320，那么：</span><br><span class="line">cos θ = 新宽度 / 旧宽度 = 480 / 640;</span><br><span class="line">var rotate = (Math.acos(480/640)*180/Math.PI).toFixed(2); // 新宽度 / 旧宽度</span><br></pre></td></tr></table></figure></p>
 
-  <li>
-    <span class="date">
-      2018-06-28
-    </span>
-    <a href="/2018/06/28/网站搭建步骤/" class="title">
-      网站搭建步骤
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2018-06-28
-    </span>
-    <a href="/2018/06/28/bat命令/" class="title">
-      bat命令
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2018-06-14
-    </span>
-    <a href="/2018/06/14/word-break、word-wrap和white-space的区别/" class="title">
-      word-break、word-wrap和white-space的区别
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2018-06-11
-    </span>
-    <a href="/2018/06/11/Vue项目引入远程js/" class="title">
-      Vue项目引入远程js
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2018-06-10
-    </span>
-    <a href="/2018/06/10/koa2入门资源/" class="title">
-      koa2入门资源
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2018-06-10
-    </span>
-    <a href="/2018/06/10/Vue项目本地资源路径问题/" class="title">
-      Vue项目本地资源路径问题
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2018-06-10
-    </span>
-    <a href="/2018/06/10/Vue项目中使用第三方库/" class="title">
-      Vue项目中使用第三方库
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2018-06-10
-    </span>
-    <a href="/2018/06/10/Vue项目中使用cdn引入js/" class="title">
-      Vue项目中使用cdn引入js
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2018-06-07
-    </span>
-    <a href="/2018/06/07/Vue项目部署资源路径问题/" class="title">
-      Vue项目部署资源路径问题
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2018-06-07
-    </span>
-    <a href="/2018/06/07/Vue项目SSR改造实战/" class="title">
-      Vue项目SSR改造实战
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2018-06-03
-    </span>
-    <a href="/2018/06/03/博客添加评论功能/" class="title">
-      博客添加评论功能
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2018-05-31
-    </span>
-    <a href="/2018/05/31/flag/" class="title">
-      flag
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2018-05-30
-    </span>
-    <a href="/2018/05/30/hexo搭建并部署到gitpages/" class="title">
-      hexo搭建并部署到gitpages
-    </a>
-  </li>
-
-
-          </ul>
-        
-      </div>
+        </div>
+      </article>
     </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+           
+              <li class="next">
+              <a href="/2018/06/28/bat命令/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+    <!-- 来比力评论框 start -->
+        <section class="livere" id="comments">
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzAxMS8xMzU0Nw==">
+    <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+    
+           if (typeof LivereTower === 'function') { return; }
+    
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+    
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+</section>
+    <!-- 来比力评论框 end -->
+  
+</section>
+
+
+    </div>
+   
+　　　　
   </div>
 </div>
 
